@@ -1,0 +1,428 @@
+<header>
+    <section class="textos-header">
+        <br>
+        <h2>Ingeniería de Sistemas</h2>
+        <h1>Tecnologías Emergentes SIS-414-G1</h1>
+        <br>
+        <br>
+        <br>
+        <h2>Primer Parcial</h2><br>
+        <h2>Estudiante: Marco Antonio Cruz Mamani</h2>
+    </section>
+    <div class="wave" style="height: 150px; overflow: hidden">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
+        <path d="M0.00,49.98 C117.66,150.50 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #d3d3d3"></path>
+    </svg>
+    </div>
+</header>
+<main>
+    <section class="contenedor">
+        
+        <div class="banner">
+            
+        </div> 
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 2.0.15.- Variables.</h3>
+            </div> 
+            <pre>
+                <code>
+                    let nombre1 = "Maxwell Wright";
+                    let telefono1 = "(0191) 719 6495";
+                    let email1 = "Curabitur.egestas.nunc@nonummyac.co.uk";
+                        
+                    let nombre2 = "Rajá Villarreal";
+                    let telefono2 = "0866 398 2895";
+                    let email2 = "posuere.vulputate@sed.com";
+                        
+                    let nombre3 = "Helen Richards";
+                    let telefono3 = "0800 1111";
+                    let email3 = "libero@convallis.edu";
+                        
+                    console.log("---2.015.- Laboratorio: Variables")
+                    console.log("Primer contacto: " + nombre1 + " / " + telefono1 + " / " + email1);
+                    console.log("Ultimo contacto: " + nombre2 + " / " + telefono2 + " / " + email2); 
+                </code>
+            </pre>
+        </div>
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 2.2.5.- Tipos de datos.</h3>
+            </div> 
+            <pre>
+                <code>
+                  let contactos = [&lbrace;
+                      nombre: "Maxwell Wright",
+                      telefono: "(0191) 719 6495",
+                      email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+                      &rbrace;, &lbrace;
+                      nombre: "Raja Villarreal",
+                      telefono: "0866 398 2895",
+                      email: "posuere.vulputate@sed.com"
+                      &rbrace;, &lbrace;
+                      nombre: "Helen Richards",
+                      telefono: "0800 1111",
+                      email: "libero@convallis.edu"
+                      &rbrace;, &lbrace;
+                      nombre: "Maisie Haley",
+                      telefono: "0913 531 3030",
+                      email: "risus.Quisque@urna.ca"
+                      &rbrace;];
+                  console.log("---2.2.5.- Laboratorio: Tipos de Datos")
+                  console.log("Primer Contacto: " + contactos[0].name + " / " + 
+                                                    contactos[0].phone + " / " + 
+                                                    contactos[0].email); 
+                  console.log("Ultimo Contacto: " + contactos[contactos.length - 1].name + " / " +
+                                                    contactos[contactos.length - 1].phone + " / " + 
+                                                    contactos[contactos.length - 1].email);
+                </code>
+              </pre>              
+        </div>
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 3.2.5.- Interacción.</h3>
+            </div>
+            <pre>
+                <code>
+                    let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+                    let nuevoTelefono = prompt("Ingrese el teléfono del nuevo contacto:");
+                    let nuevoCorreo = prompt("Ingrese el correo electrónico del nuevo contacto:");
+                    let nuevoContacto = &lbrace;
+                      nombre: nuevoNombre,
+                      telefono: nuevoTelefono,
+                      correo: nuevoCorreo
+                    &rbrace;
+                    
+                    contactos.push(nuevoContacto);
+                  
+                    let ultimo = contactos.length - 1;
+                  
+                    console.log(`$&lbrace;contactos[0].nombre&rbrace; / $&lbrace;contactos[0].telefono&rbrace; / 
+                                $&lbrace;contactos[0].correo&rbrace;`);
+                    console.log(`$&lbrace;contactos[ultimo].nombre&rbrace; / $&lbrace;contactos[ultimo].telefono&rbrace; / 
+                                 $&lbrace;contactos[ultimo].correo&rbrace;`); 
+                </code>
+            </pre>
+        </div>
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 4.0.9.- Ejecuión Condicional.</h3>
+            </div>
+            <pre>
+                <code>
+                    let opcion = prompt("1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. 
+                                        Agregar un nuevo contacto");
+
+                    if (opcion === "1") &lbrace;
+                        console.log("Primer contacto:");
+                        console.log(`$&lbrace;contactos[0].nombre&rbrace; / $&lbrace;contactos[0].telefono&rbrace; / 
+                                     $&lbrace;contactos[0].correo&rbrace;`);
+                        &rbrace; else if (opcion === "2") &lbrace;
+                        console.log("Último contacto:");
+                        let ultimo = contactos.length - 1;
+                        console.log(`$&lbrace;contactos[ultimo].nombre&rbrace; / $&lbrace;contactos[ultimo].telefono&rbrace; / 
+                                     $&lbrace;contactos[ultimo].correo&rbrace;`);
+                    &rbrace; else if (opcion === "3") &lbrace;
+                        let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+                        let nuevoTelefono = prompt("Ingrese el teléfono del nuevo contacto:");
+                        let nuevoCorreo = prompt("Ingrese el correo electrónico del nuevo contacto:");
+
+                    if (nuevoNombre && nuevoTelefono && nuevoCorreo) &lbrace;
+                        let nuevoContacto = &lbrace;
+                        nombre: nuevoNombre,
+                        telefono: nuevoTelefono,
+                        correo: nuevoCorreo
+                    &rbrace;;
+
+                    contactos.push(nuevoContacto);
+                    console.log("Nuevo contacto agregado exitosamente.");
+                    &rbrace; else &lbrace;
+                        console.log("Error: Debes ingresar nombre, teléfono y correo electrónico para agregar
+                                     un nuevo contacto.");
+                    &rbrace;
+                    &rbrace; else &lbrace;
+                        console.log("Opción inválida. Por favor, elige una opción válida (1, 2 o 3).");
+                    &rbrace;
+                </code>
+            </pre>
+        </div>
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 4.1.12.- Bucles.</h3>
+            </div>
+            <pre>
+                <code>
+                    while (opcion !== "salir") &lbrace;
+                        opcion = prompt("Selecciona una acción:\n1. Primer contacto\n2. 
+                                        Último contacto\n3. Todos los contactos\n4. 
+                                        Agregar nuevo contacto\n5. Salir");
+                        switch (opcion) &lbrace;
+                            case "1":
+                            console.log("Primer contacto:");
+                            if (contactss.length > 0) &lbrace;
+                                console.log(`Nombre: $&lbrace;contactss[0].name&rbrace;, Teléfono: $&lbrace;contactss[0].phone&rbrace;, 
+                                             Email: $&lbrace;contactss[0].email&rbrace;`);
+                            &rbrace; else &lbrace;
+                                console.log("La lista de contactos está vacía");
+                            &rbrace;
+                            break;
+                            case "2":
+                            console.log("Último contacto:");
+                            if (contactss.length > 0) &lbrace;
+                                const lastIndex = contactss.length - 1;
+                                console.log(`Nombre: $&lbrace;contactss[lastIndex].name&rbrace;, Teléfono: 
+                                            $&lbrace;contactss[lastIndex].phone&rbrace;, Email: 
+                                            $&lbrace;contactss[lastIndex].email&rbrace;`);
+                            &rbrace; else &lbrace;
+                                console.log("La lista de contactos está vacía.");
+                            &rbrace;
+                            break;
+                            case "3":
+                            console.log("Todos los contactos:");
+                            if (contactss.length > 0) &lbrace;
+                                contactss.forEach((contact, index) => &lbrace;
+                                console.log(`$&lbrace;index + 1&rbrace;. Nombre: $;&lbrace;contact.name&rbrace;, Teléfono: 
+                                $&lbrace;contact.phone&rbrace;,  Email: $&lbrace;contact.email&rbrace;`);
+                            &rbrace;);
+                            &rbrace; else &lbrace;
+                                console.log("La lista de contactos está vacía.");
+                            &rbrace;
+                            break;
+                            case "4":
+                            let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+                            let nuevoTelefono = prompt("Ingrese el teléfono del nuevo contacto:");
+                            let nuevoEmail = prompt("Ingrese el correo electrónico del nuevo contacto:");
+                            if (nuevoNombre && nuevoTelefono && nuevoEmail) &lbrace;
+                                let nuevoContacto = &lbrace;
+                                name: nuevoNombre,
+                                phone: nuevoTelefono,
+                                email: nuevoEmail,
+                            &rbrace;;
+                            contactss.push(nuevoContacto);
+                            console.log("Nuevo contacto agregado.");
+                            &rbrace; else &lbrace;
+                                console.log("Error: Debes ingresar nombre, teléfono y correo electrónico.");
+                            &rbrace;
+                            break;
+                            case "5":
+                            opcion = "salir";
+                            console.log("Saliendo...");
+                            break;
+                            default:
+                            console.log("Opción inválida. Por favor, elige una acción válida.");
+                            &rbrace;
+                        &rbrace;
+                </code>
+            </pre>
+        </div>
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 5.1.11 (PARTE 1)</h3>
+            </div>
+            <pre>
+                <code>
+                    let op;
+                    while (op !== "quit") &lbrace;
+                        op = prompt("1. Mostrar contacto por posición\n2. Mostrar último contacto\n3. 
+                                Mostrar todos los contactos\n4. Agregar nuevo contacto\n5. 
+                                Salir del programa");
+                        switch (op) &lbrace;
+                        case "1":
+                            console.log("Mostrar contacto:");
+                            let posicionContacto = prompt("Ingrese la posición del contacto:");
+                            let i = parseInt(posicionContacto);
+                            mostrarContacto(contacts, i);
+                            break;
+                        case "2":
+                            console.log("Último contacto:");
+                            let ultimoIndice = contacts.length - 1;
+                            console.log(`$&lbrace;contacts[ultimoIndice].name&rbrace; / $&lbrace;contacts[ultimoIndice].phone&rbrace; / 
+                                         $&lbrace;contacts[ultimoIndice].email&rbrace;`);
+                            break;
+                        case "3":
+                            console.log("Todos los contactos:");
+                            mostrarTodosLosContactos(contacts);
+                            break;
+                        case "4":
+                            let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+                            let nuevoTelefono = prompt("Ingrese el teléfono del nuevo contacto:");
+                            let nuevoEmail = prompt("Ingrese el correo electrónico del nuevo contacto:");
+                                                     agregarNuevoContacto(contacts, nuevoNombre, 
+                                                     nuevoTelefono, nuevoEmail);
+                            break;
+                        case "5":
+                            op = "quit";
+                            console.log("Saliendo del programa...");
+                            break;
+                            default:
+                            console.log("Opción inválida. Por favor, elige una opción válida.");
+                        &rbrace;
+                    &rbrace;
+
+                    function mostrarContacto(contacts, i) &lbrace;
+                    if (contacts instanceof Array && i >= 0 && i < contacts.length) &lbrace;
+                        console.log(`$&lbrace;contacts[i].name&rbrace; / $&lbrace;contacts[i].phone&rbrace; / 
+                                     $&lbrace;contacts[i].email&rbrace;`);
+                    &rbrace; else &lbrace;
+                            console.log("Error: Índice de contacto inválido.");
+                        &rbrace;
+                    &rbrace;
+
+                    function mostrarTodosLosContactos(contacts) &lbrace;
+                    if (contacts instanceof Array) &lbrace;
+                        for (let i = 0; i < contacts.length; i++) &lbrace;
+                            console.log(`$&lbrace;contacts[i].name&rbrace; / $&lbrace;contacts[i].phone&rbrace; / $&lbrace;contacts[i].email&rbrace;`);
+                        &rbrace;
+                    &rbrace; else &lbrace;
+                        console.log("Error: La lista de contactos es inválida.");
+                        &rbrace;
+                    &rbrace;
+
+                    function agregarNuevoContacto(contacts, name, phone, email) &lbrace;
+                    if (contacts instanceof Array && name && phone && email) &lbrace;
+                        let nuevoContacto = &lbrace;
+                        name: name,
+                        phone: phone,
+                        email: email
+                        &rbrace;;
+                        contacts.push(nuevoContacto);
+                        console.log("Nuevo contacto agregado exitosamente.");
+                    &rbrace; else &lbrace;
+                        console.log("Error: Debes ingresar nombre, teléfono y correo electrónico
+                                    para agregar un nuevo contacto.");
+                        &rbrace;
+                    &rbrace;
+                </code>
+            </pre>
+        </div>
+        <div class="lab">
+            <div class="banner">
+                <h3>PRÁCTICA DE LABORATORIO 5.1.12 (PARTE 2)</h3>
+            </div>
+            <pre>
+                <code>
+                    let contacts = [
+                        &lbrace;
+                            name: "Maxwell Wright",
+                            phone: "(0191) 719 6495",
+                            email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+                        &rbrace;,
+                        &lbrace;
+                            name: "Raja Villarreal",
+                            phone: "0866 398 2895",
+                            email: "posuere.vulputate@sed.com"
+                        &rbrace;,
+                        &lbrace;
+                            name: "Helen Richards",
+                            phone: "0800 1111",
+                            email: "libero@convallis.edu"
+                        &rbrace;
+                    ];
+
+                    let continuar = true;
+                    while (continuar) &lbrace;
+                        let opcion = prompt("Selecciona una opción:\n1. Mostrar contacto por posición\n2. 
+                                            Mostrar último contacto\n3. Mostrar todos los contactos\n4. 
+                                            Agregar un nuevo contacto\n5. Ordenar contactos\n6. 
+                                            Salir del programa");
+                        switch (opcion) &lbrace;
+                            case "1":
+                                mostrarContactoPorPosicion();
+                                break;
+                            case "2":
+                                mostrarUltimoContacto();
+                                break;
+                            case "3":
+                                mostrarTodosLosContactos();
+                                break;
+                            case "4":
+                                agregarNuevoContacto();
+                                break;
+                            case "5":
+                                ordenarContactos();
+                                break;
+                            case "6":
+                                continuar = false;
+                                console.log("Saliendo del programa...");
+                                break;
+                                default:
+                                console.log("Opción inválida. Por favor, elige una opción válida.");
+                        &rbrace;
+                    &rbrace;
+                    function mostrarContactoPorPosicion() &lbrace;
+                    let posicion = parseInt(prompt("Ingrese la posición del contacto:"));
+                    if (!isNaN(posicion) && posicion >= 1 && posicion <= contacts.length) &lbrace;
+                        let contacto = contacts[posicion - 1];
+                        mostrarDetalleContacto(contacto);
+                    &rbrace; else &lbrace;
+                        console.log("Error: Posición de contacto inválida.");
+                        &rbrace;
+                    &rbrace;
+                    function mostrarUltimoContacto() &lbrace;
+                     if (contacts.length > 0) &lbrace;
+                        let ultimoContacto = contacts[contacts.length - 1];
+                        mostrarDetalleContacto(ultimoContacto);
+                    &rbrace; else &lbrace;
+                        console.log("La lista de contactos está vacía.");
+                        &rbrace;
+                    &rbrace;
+                    function mostrarTodosLosContactos() &lbrace;
+                    if (contacts.length > 0) &lbrace;
+                        contacts.forEach((contacto, index) => &lbrace;
+                            console.log(`$&lbrace;index + 1&rbrace;.`);
+                            mostrarDetalleContacto(contacto);
+                        &rbrace;);
+                    &rbrace; else &lbrace;
+                        console.log("La lista de contactos está vacía.");
+                        &rbrace;
+                    &rbrace;
+                    function agregarNuevoContacto() &lbrace;
+                        let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+                        let nuevoTelefono = prompt("Ingrese el teléfono del nuevo contacto:");
+                        let nuevoEmail = prompt("Ingrese el correo electrónico del nuevo contacto:");
+                        if (nuevoNombre && nuevoTelefono && nuevoEmail) &lbrace;
+                            let nuevoContacto = &lbrace;
+                                name: nuevoNombre,
+                                phone: nuevoTelefono,
+                                email: nuevoEmail
+                            &rbrace;;
+                            contacts.push(nuevoContacto);
+                            console.log("Nuevo contacto agregado exitosamente.");
+                        &rbrace; else &lbrace;
+                            console.log("Error: Debes ingresar nombre, teléfono y correo electrónico
+                                        para agregar un nuevo contacto.");
+                            &rbrace;
+                        &rbrace;
+                        function mostrarDetalleContacto(contacto) &lbrace;
+                            console.log(`Nombre: $&lbrace;contacto.name&rbrace;`);
+                            console.log(`Teléfono: $&lbrace;contacto.phone&rbrace;`);
+                            console.log(`Email: $&lbrace;contacto.email&rbrace;`);
+                        &rbrace;
+                        function ordenarContactos() &lbrace;
+                            let opcionOrden = prompt("Selecciona cómo quieres ordenar los contactos:
+                                                     \n1. Por nombre\n2. Por teléfono\n3. 
+                                                    Por correo electrónico");
+
+                            switch (opcionOrden) &lbrace;
+                                case "1":
+                                    contacts.sort((a, b) => a.name.localeCompare(b.name));
+                                    break;
+                                case "2":
+                                    contacts.sort((a, b) => a.phone.localeCompare(b.phone));
+                                    break;
+                                case "3":
+                                    contacts.sort((a, b) => a.email.localeCompare(b.email));
+                                    break;
+                                default:
+                                    console.log("Opción inválida para ordenar los contactos.");
+                            &rbrace;
+                            console.log("Contactos ordenados.");
+                        &rbrace;
+                </code>
+            </pre>
+        </div>
+    </section><script href="/js/MarcoCruz/laboratorios.js"></script>
+</main>
+<footer>
+      <h2 class="titulo-final">&copy; Marco Cruz</h2>
+</footer>
