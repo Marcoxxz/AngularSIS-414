@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { LenguajesService } from 'src/app/services/lenguajes.service';
-import { UsuariosService } from 'src/app/services/usuarios.service'; 
 
 @Component({
   selector: 'app-home',
@@ -9,8 +8,8 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class HomeComponent implements OnInit{
 
-  name:string = "Java";
-  abrev:string = "jv";
+  name:string = "JavaScript";
+  abrev:string = "JS";
   data:any = [];
 
   dataUsers: any = [];
