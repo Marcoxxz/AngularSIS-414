@@ -14,6 +14,37 @@
     </div>
 </header>
 <main>
+    <section class="contenedor1">
+        <table border="1" class="table1">
+            <tr>
+                <th>Nro</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Correo</th>
+            </tr>
+            <tr *ngFor="let user of dataUsers; index as i">
+                <td>{{ (i + 1) }}</td>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>                    
+                <td>{{ user.email }}</td>                    
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <tr>
+                <th>Nro</th>
+                <th>Abrev</th>
+                <th>Nombre</th>
+            </tr>
+            <tr *ngFor="let item of dataLanguages; index as i">
+                <td>{{ (i + 1) }}</td>
+                <td>{{ item.languages.abrev }}</td>
+                <td>{{ item.languages.name }}</td>
+            </tr>
+        </table> 
+    </section>
     <section class="contenedor">
         <div class="lab">
             <div class="banner">
