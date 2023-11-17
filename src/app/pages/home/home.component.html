@@ -14,6 +14,19 @@
     </div>
 </header>
 <main>
+    <section class="contenedor1">
+        <div class="table">
+            <form>
+                <label>Nombres</label><br>
+                <input type="text" [ngModel]="name" [ngModelOptions]="{ standalone: true }"><br>
+                {{name}}
+                <label>Abrev:</label><br>
+                <input type="text" [ngModel]="abrev" [ngModelOptions]="{ standalone: true }"><br>
+                {{abrev}}
+                <input type="button" value="Enviar" (click)="save()">
+            </form>
+        </div>
+    </section>
     <section class="contenedor">
         <div class="lab">
             <div class="banner">
