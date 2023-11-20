@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     
+    
 }
 
 .banner{
@@ -15,6 +16,26 @@ main{
 
  }
 
+ h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+ }
+
+table{
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 11px 0 rgb(56, 56, 56);
+}
+
+input{
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 11px 0 rgb(56, 56, 56);
+}
+th{
+    padding: 5px;
+}
+
 .contenedor{
     padding: 15px 0;
     width: 90%;
@@ -26,6 +47,22 @@ main{
     color: white;
     border-radius: 20px; 
     
+}
+
+.contenedor1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px 0;
+    max-width: 1000px;
+    margin: auto auto 30px;
+    text-align: center;
+    background-color: #000428;
+    color: white;
+    border-radius: 20px; 
+    
+}
+
+table {
+    margin: 0 auto; 
 }
 
 header{
@@ -60,6 +97,12 @@ header .textos-header{
 
 }
 
+.table{
+
+    text-align: center
+
+}
+
 .textos-header h1{
     font-size: 50px;
     color: white;
@@ -85,6 +128,10 @@ footer{
     background: linear-gradient(to right,rgb(2, 5, 44),rgba(19, 65, 105, 0.801), rgb(2, 5, 44))
 }
 
+table{
+    text-align: center;
+}
+
 .titulo-final{
     text-align: center;
     font-size: 15px;
@@ -94,7 +141,7 @@ footer{
 
 .lab{
     background-color: black;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 810px;
     margin-left: auto;
     margin-right: auto;
