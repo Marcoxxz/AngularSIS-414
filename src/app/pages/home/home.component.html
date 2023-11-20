@@ -4,7 +4,6 @@
         <h2>Ingeniería de Sistemas</h2>
         <h1>Tecnologías Emergentes SIS-414-G1</h1>
         <br>
-        <h2>Primer Parcial</h2><br>
         <h2>Estudiante: Marco Antonio Cruz Mamani</h2>
     </section>
     <div class="wave" style="height: 150px; overflow: hidden">
@@ -14,21 +13,58 @@
     </div>
 </header>
 <main>
-    <section class="contenedor1">
-        <h3>Post verb</h3><br>
+<section class="contenedor1">
+    <h1>SEGUNDO PARCIAL</h1>
+    <div class="lab">
+        <br>
+        <h3>"Envio de datos a una Api con el método Post"</h3><br>
         <div class="table">
             <form>
                 <label>Nombres</label><br>
-                <input type="text" [ngModel]="name" [ngModelOptions]="{ standalone: true }"><br>
-                {{name}}
+                <input type="text" [(ngModel)]="name" name="name"><br><br>
                 <label>Abrev:</label><br>
-                <input type="text" [ngModel]="abrev" [ngModelOptions]="{ standalone: true }"><br>
-                {{abrev}}
+                <input type="text" [(ngModel)]="abrev" name="Abrev"><br><br>
                 <input type="button" value="Enviar" (click)="save()">
             </form>
+        </div><br>  
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>Nombre</th>
+                        <th>Abrev.</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of dataSource; index as nro">
+                        <th>{{nro + 1}}</th>
+                        <th>{{row.name}}</th>
+                        <th>{{row.abrev}}</th>
+                        <th>
+                            <button (click)="actualizar(row.id)">Actualizar</button>
+                            <button (click)="borrar(row.id)">Eliminar</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table><br>
+            <div>
+                <form *ngIf="isEditing">
+                    <h2>Formulario de Edición</h2>
+                    <label>Nombre:</label><br>
+                    <input class="nom" type="text" [(ngModel)]="editRow.name" name="name"><br>
+                    <label>Abrev:</label><br>
+                    <input class="nom" type="text" [(ngModel)]="editRow.abrev" name="abrev"><br>
+                    <input class="edit" type="button" value="Guardar" (click)="guardar()">
+                </form>
+            </div>
         </div>
-    </section>
-    <section class="contenedor">
+    </div><br><br>
+</section>  
+<section class="contenedor">
+        <br>
+        <h1>PRIMER PARCIAL</h1>
         <div class="lab">
             <div class="banner">
                 <h3>PRÁCTICA DE LABORATORIO 2.0.15.- Variables.</h3>

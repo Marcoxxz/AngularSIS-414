@@ -8,31 +8,68 @@ import { LenguajesService } from 'src/app/services/lenguajes.service';
 })
 export class HomeComponent implements OnInit{
 
-  name:string = "JavaScript";
-  abrev:string = "JS";
-  data:any = [];
-
-  dataUsers: any = [];
-  dataLanguages: any = [];
+  name:string = "";
+  abrev:string = "";
+  dataSource:any = [];
+  isEditing = false;
+  editRow: any = null;
 
   constructor(private language: LenguajesService){}
 
   ngOnInit()
   {
     this.language.getListLanguges().subscribe( (data) => {
-      console.log(data)
-    } )
+      for(var key in data){
+        var row = {id:key, abrev: data[key].abrev, name: data[key].name}
+        this.dataSource.push(row)
+      }
+      console.log(this.dataSource)
+    })
   }
 
   save()
   {
-    var body = 
-    {
+    let body = {
       name: this.name,
       abrev: this.abrev
     }
     this.language.postLanguage(body).subscribe( (data) => {
-      console.log(data)   
-    })
-  } 
+      if(data!=null)
+      {
+        window.location.reload();
+      }
+    });
+  }
+
+  loadLanguages() {
+    this.language.getListLanguges().subscribe((data) => {
+        this.dataSource = Object.keys(data).map(key => ({ id: key, ...data[key] }));
+    });
+  }
+
+borrar(id:string){
+  let aux = confirm("Esta Seguro de Borrar")
+  if(!aux) return
+    this.language.deleteLanguage(id).subscribe( (data) => {
+      if(data==null)
+      {
+        window.location.reload();
+      }
+    });
+  }
+
+  actualizar(id: string) {
+    let aux = confirm("Esta Seguro de Actualizar");
+    if (!aux) return;
+    this.isEditing = true;
+    this.editRow = { ...this.dataSource.find((item: { id: string; }) => item.id === id) };
+  }
+
+  guardar() {
+    this.language.updateLanguage(this.editRow.id, this.editRow).subscribe(() => {
+      this.loadLanguages();
+      this.isEditing = false;
+      this.editRow = null;
+    });
+  }
 }
