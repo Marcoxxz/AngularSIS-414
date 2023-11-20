@@ -53,10 +53,10 @@
                 <form *ngIf="isEditing">
                     <h2>Formulario de Edición</h2>
                     <label>Nombre:</label><br>
-                    <input class="nom" type="text" [(ngModel)]="editRow.name" name="name"><br>
+                    <input type="text" [(ngModel)]="editRow.name" name="name"><br>
                     <label>Abrev:</label><br>
-                    <input class="nom" type="text" [(ngModel)]="editRow.abrev" name="abrev"><br>
-                    <input class="edit" type="button" value="Guardar" (click)="guardar()">
+                    <input type="text" [(ngModel)]="editRow.abrev" name="abrev"><br>
+                    <input type="button" value="Guardar" (click)="guardar()">
                 </form>
             </div>
         </div>
