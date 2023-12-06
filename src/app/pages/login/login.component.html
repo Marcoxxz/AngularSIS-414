@@ -1,0 +1,13 @@
+<app-header></app-header>
+<div class="container">
+    <br><br><br>
+    <h2>Login</h2><br>
+    <label for="usuario">Email:</label>
+    <input type="text" id="usuario" [(ngModel)]="email" name="email" required><br>
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena"  [(ngModel)]="pass" name="pass" required><br>
+
+    <button (click)="login()">Entrar</button><br><br>
+    <button (click)="loginGoogle()">Login with Google</button>
+</div>
