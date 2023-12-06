@@ -1,0 +1,10 @@
+<div class="navbar">
+    <div class="navbar">
+        <a routerLink="/">Inicio</a>
+        <a routerLink="/labs">Labs</a>
+        <a href="#" (click)="salir()" *ngIf="user!=null">Salir</a>
+        <div class="login-container">
+            <a class="active" routerLink="/login">Login <span *ngIf="user!=null">{{user}}</span></a>
+        </div>
+    </div>
+</div>
